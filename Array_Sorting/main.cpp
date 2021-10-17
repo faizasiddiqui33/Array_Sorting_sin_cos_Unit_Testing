@@ -1,3 +1,12 @@
+/*****************************************************************************************************************************
+Module Name: White-box texting of sine and cosine of numbers
+Author: Faiza Fatma Siddiqui
+Date Created/Modified:12.10.2021
+Student ID: 200473896
+Purpose: CS 700 Assignment 2 
+*****************************************************************************************************************************/
+
+
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
