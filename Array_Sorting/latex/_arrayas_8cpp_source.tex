@@ -1,0 +1,75 @@
+\hypertarget{_arrayas_8cpp_source}{}\doxysection{Arrayas.\+cpp}
+\label{_arrayas_8cpp_source}\index{src/Arrayas.cpp@{src/Arrayas.cpp}}
+\mbox{\hyperlink{_arrayas_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_arrayas_8cpp_source_l00001}00001 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_arrayas_8h}{Arrayas.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_arrayas_8cpp_source_l00002}00002 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{\Hypertarget{_arrayas_8cpp_source_l00003}00003 \textcolor{preprocessor}{\#include <cstdlib>}}
+\DoxyCodeLine{\Hypertarget{_arrayas_8cpp_source_l00004}00004 \textcolor{preprocessor}{\#include <ctime>}}
+\DoxyCodeLine{\Hypertarget{_arrayas_8cpp_source_l00005}00005 \textcolor{preprocessor}{\#include <algorithm>}}
+\DoxyCodeLine{\Hypertarget{_arrayas_8cpp_source_l00006}00006 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{\Hypertarget{_arrayas_8cpp_source_l00007}\mbox{\hyperlink{class_arrayas_abe54f810fc37e08354330dab61bcf3d2}{00007}} \mbox{\hyperlink{class_arrayas_abe54f810fc37e08354330dab61bcf3d2}{Arrayas::Arrayas}}()}
+\DoxyCodeLine{\Hypertarget{_arrayas_8cpp_source_l00008}00008 \{}
+\DoxyCodeLine{\Hypertarget{_arrayas_8cpp_source_l00009}00009     \textcolor{comment}{//ctor}}
+\DoxyCodeLine{\Hypertarget{_arrayas_8cpp_source_l00010}00010 \}}
+\DoxyCodeLine{\Hypertarget{_arrayas_8cpp_source_l00011}00011 }
+\DoxyCodeLine{\Hypertarget{_arrayas_8cpp_source_l00012}\mbox{\hyperlink{class_arrayas_a03d5bd5802143b286d6d930effae2daf}{00012}} \mbox{\hyperlink{class_arrayas_a03d5bd5802143b286d6d930effae2daf}{Arrayas::\string~Arrayas}}()}
+\DoxyCodeLine{\Hypertarget{_arrayas_8cpp_source_l00013}00013 \{}
+\DoxyCodeLine{\Hypertarget{_arrayas_8cpp_source_l00014}00014     \textcolor{comment}{//dtor}}
+\DoxyCodeLine{\Hypertarget{_arrayas_8cpp_source_l00015}00015 \}}
+\DoxyCodeLine{\Hypertarget{_arrayas_8cpp_source_l00016}00016 }
+\DoxyCodeLine{\Hypertarget{_arrayas_8cpp_source_l00017}\mbox{\hyperlink{_arrayas_8cpp_a6002c09b3d85eed3e6952e7dc6f392fa}{00017}} \textcolor{keywordtype}{void} \mbox{\hyperlink{_arrayas_8cpp_a6002c09b3d85eed3e6952e7dc6f392fa}{merge}}( \textcolor{keywordtype}{int} A[], \textcolor{keywordtype}{int} first, \textcolor{keywordtype}{int} mid, \textcolor{keywordtype}{int} last, \textcolor{keywordtype}{int} temp[] )}
+\DoxyCodeLine{\Hypertarget{_arrayas_8cpp_source_l00018}00018 \{}
+\DoxyCodeLine{\Hypertarget{_arrayas_8cpp_source_l00019}00019    \textcolor{keywordtype}{int} iA = first, iB = mid, n = last -\/ first;}
+\DoxyCodeLine{\Hypertarget{_arrayas_8cpp_source_l00020}00020    \textcolor{keywordflow}{for} ( \textcolor{keywordtype}{int} t = 0; t < n; t++ ) temp[t] = ( iB == last ||  ( iA != mid \&\& A[iA] < A[iB] ) ) ? A[iA++] : A[iB++];}
+\DoxyCodeLine{\Hypertarget{_arrayas_8cpp_source_l00021}00021    copy\_n( temp, n, A + first );}
+\DoxyCodeLine{\Hypertarget{_arrayas_8cpp_source_l00022}00022 \}}
+\DoxyCodeLine{\Hypertarget{_arrayas_8cpp_source_l00023}00023 }
+\DoxyCodeLine{\Hypertarget{_arrayas_8cpp_source_l00024}\mbox{\hyperlink{_arrayas_8cpp_a212099137a562ed980fa5c92ab4d1eae}{00024}} \textcolor{keywordtype}{void} \mbox{\hyperlink{_arrayas_8cpp_a212099137a562ed980fa5c92ab4d1eae}{mergeSort}}( \textcolor{keywordtype}{int} A[], \textcolor{keywordtype}{int} n, \textcolor{keywordtype}{int} start, \textcolor{keywordtype}{int} temp[] )}
+\DoxyCodeLine{\Hypertarget{_arrayas_8cpp_source_l00025}00025 \{}
+\DoxyCodeLine{\Hypertarget{_arrayas_8cpp_source_l00026}00026    \textcolor{keywordflow}{if} ( n < 2 || ( n == 2 \&\& A[start] <= A[start+1] ) ) \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_arrayas_8cpp_source_l00027}00027    \textcolor{keywordtype}{int} nlow = n / 2, nhigh = n -\/ nlow, mid = start + nlow;}
+\DoxyCodeLine{\Hypertarget{_arrayas_8cpp_source_l00028}00028    \mbox{\hyperlink{_arrayas_8cpp_a212099137a562ed980fa5c92ab4d1eae}{mergeSort}}( A, nlow , start, temp );}
+\DoxyCodeLine{\Hypertarget{_arrayas_8cpp_source_l00029}00029    \mbox{\hyperlink{_arrayas_8cpp_a212099137a562ed980fa5c92ab4d1eae}{mergeSort}}( A, nhigh, mid  , temp );}
+\DoxyCodeLine{\Hypertarget{_arrayas_8cpp_source_l00030}00030    \mbox{\hyperlink{_arrayas_8cpp_a6002c09b3d85eed3e6952e7dc6f392fa}{merge}}( A, start, mid, start + n, temp );}
+\DoxyCodeLine{\Hypertarget{_arrayas_8cpp_source_l00031}00031 \}}
+\DoxyCodeLine{\Hypertarget{_arrayas_8cpp_source_l00032}00032 }
+\DoxyCodeLine{\Hypertarget{_arrayas_8cpp_source_l00033}\mbox{\hyperlink{_arrayas_8cpp_ac63f254d1a5dc08c0f681b410535b73f}{00033}} \textcolor{keywordtype}{void} \mbox{\hyperlink{_arrayas_8cpp_a212099137a562ed980fa5c92ab4d1eae}{mergeSort}}( \textcolor{keywordtype}{int} A[], \textcolor{keywordtype}{int} n )}
+\DoxyCodeLine{\Hypertarget{_arrayas_8cpp_source_l00034}00034 \{}
+\DoxyCodeLine{\Hypertarget{_arrayas_8cpp_source_l00035}00035    \textcolor{keywordtype}{int} *temp = \textcolor{keyword}{new} \textcolor{keywordtype}{int}[n];}
+\DoxyCodeLine{\Hypertarget{_arrayas_8cpp_source_l00036}00036    \mbox{\hyperlink{_arrayas_8cpp_a212099137a562ed980fa5c92ab4d1eae}{mergeSort}}( A, n, 0, temp );}
+\DoxyCodeLine{\Hypertarget{_arrayas_8cpp_source_l00037}00037    \textcolor{keyword}{delete} [] temp;}
+\DoxyCodeLine{\Hypertarget{_arrayas_8cpp_source_l00038}00038 \}}
+\DoxyCodeLine{\Hypertarget{_arrayas_8cpp_source_l00039}00039 }
+\DoxyCodeLine{\Hypertarget{_arrayas_8cpp_source_l00040}00040 \textcolor{comment}{//======================================================================}}
+\DoxyCodeLine{\Hypertarget{_arrayas_8cpp_source_l00041}00041 }
+\DoxyCodeLine{\Hypertarget{_arrayas_8cpp_source_l00042}00042 }
+\DoxyCodeLine{\Hypertarget{_arrayas_8cpp_source_l00043}\mbox{\hyperlink{_arrayas_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{00043}} \textcolor{keywordtype}{int} \mbox{\hyperlink{_arrayas_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}()}
+\DoxyCodeLine{\Hypertarget{_arrayas_8cpp_source_l00044}00044 \{}
+\DoxyCodeLine{\Hypertarget{_arrayas_8cpp_source_l00045}00045 }
+\DoxyCodeLine{\Hypertarget{_arrayas_8cpp_source_l00046}00046    \textcolor{keyword}{const} \textcolor{keywordtype}{int} N = 10000000;}
+\DoxyCodeLine{\Hypertarget{_arrayas_8cpp_source_l00047}00047        \textcolor{comment}{// Make N big enough to be worthwhile}}
+\DoxyCodeLine{\Hypertarget{_arrayas_8cpp_source_l00048}00048    \textcolor{keyword}{static} \textcolor{keywordtype}{int} A[N];}
+\DoxyCodeLine{\Hypertarget{_arrayas_8cpp_source_l00049}00049    srand( time( 0 ) );}
+\DoxyCodeLine{\Hypertarget{_arrayas_8cpp_source_l00050}00050    \textcolor{keywordflow}{for} ( \textcolor{keywordtype}{int} \&e : A ) e = 1 + rand() \% 100;}
+\DoxyCodeLine{\Hypertarget{_arrayas_8cpp_source_l00051}00051 }
+\DoxyCodeLine{\Hypertarget{_arrayas_8cpp_source_l00052}00052    \textcolor{comment}{//cout << "{}Original: "{};}}
+\DoxyCodeLine{\Hypertarget{_arrayas_8cpp_source_l00053}00053    \textcolor{comment}{//for ( int e : A ) cout << e << ' ';}}
+\DoxyCodeLine{\Hypertarget{_arrayas_8cpp_source_l00054}00054 }
+\DoxyCodeLine{\Hypertarget{_arrayas_8cpp_source_l00056}00056    clock\_t t1 = clock();     \textcolor{comment}{// START YOUR CLOCK JUST ABOVE WHAT YOU WANT TO TIME}}
+\DoxyCodeLine{\Hypertarget{_arrayas_8cpp_source_l00057}00057 }
+\DoxyCodeLine{\Hypertarget{_arrayas_8cpp_source_l00058}00058    \mbox{\hyperlink{_arrayas_8cpp_a212099137a562ed980fa5c92ab4d1eae}{mergeSort}}( A, N );        \textcolor{comment}{// Whatever you are timing}}
+\DoxyCodeLine{\Hypertarget{_arrayas_8cpp_source_l00059}00059 }
+\DoxyCodeLine{\Hypertarget{_arrayas_8cpp_source_l00060}00060    clock\_t t2 = clock();     \textcolor{comment}{// STOP YOUR CLOCK JUST BELOW WHAT YOU WANT TO TIME}}
+\DoxyCodeLine{\Hypertarget{_arrayas_8cpp_source_l00062}00062 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_arrayas_8cpp_source_l00063}00063    \textcolor{comment}{//cout << "{}\(\backslash\)nSorted:   "{};}}
+\DoxyCodeLine{\Hypertarget{_arrayas_8cpp_source_l00064}00064    \textcolor{comment}{//for ( int e : A ) cout << e << ' ';}}
+\DoxyCodeLine{\Hypertarget{_arrayas_8cpp_source_l00065}00065 }
+\DoxyCodeLine{\Hypertarget{_arrayas_8cpp_source_l00066}00066 }
+\DoxyCodeLine{\Hypertarget{_arrayas_8cpp_source_l00067}00067    cout << \textcolor{stringliteral}{"{}\(\backslash\)nSorting "{}} << N << \textcolor{stringliteral}{"{} numbers took "{}} << 1000.0 * ( t2 -\/ t1 ) / CLOCKS\_PER\_SEC << \textcolor{stringliteral}{"{} milliseconds\(\backslash\)n\(\backslash\)n"{}} << endl;}
+\DoxyCodeLine{\Hypertarget{_arrayas_8cpp_source_l00068}00068 }
+\DoxyCodeLine{\Hypertarget{_arrayas_8cpp_source_l00069}00069 \}}
+\DoxyCodeLine{\Hypertarget{_arrayas_8cpp_source_l00070}00070 }
+\DoxyCodeLine{\Hypertarget{_arrayas_8cpp_source_l00071}00071 }
+
+\end{DoxyCode}

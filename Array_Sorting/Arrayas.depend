@@ -1,0 +1,16 @@
+# depslib dependency file v1.0
+1633443427 source:c:\users\eduh\desktop\desktop\c++\arrayas\main.cpp
+	<iostream>
+	<cstdlib>
+	<ctime>
+	<algorithm>
+
+1633445589 source:c:\users\eduh\desktop\desktop\c++\arrayas\src\arrayas.cpp
+	"Arrayas.h"
+	<iostream>
+	<cstdlib>
+	<ctime>
+	<algorithm>
+
+1633441428 c:\users\eduh\desktop\desktop\c++\arrayas\include\arrayas.h
+

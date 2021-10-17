@@ -1,0 +1,65 @@
+\hypertarget{main_8cpp_source}{}\doxysection{main.\+cpp}
+\mbox{\hyperlink{main_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00001}00001 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00002}00002 \textcolor{preprocessor}{\#include <cstdlib>}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00003}00003 \textcolor{preprocessor}{\#include <ctime>}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00004}00004 \textcolor{preprocessor}{\#include <algorithm>}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00005}00005 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00006}00006 }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00007}00007 }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00008}00008 \textcolor{comment}{//======================================================================}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00009}00009 }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00010}\mbox{\hyperlink{main_8cpp_a6002c09b3d85eed3e6952e7dc6f392fa}{00010}} \textcolor{keywordtype}{void} \mbox{\hyperlink{main_8cpp_a6002c09b3d85eed3e6952e7dc6f392fa}{merge}}( \textcolor{keywordtype}{int} A[], \textcolor{keywordtype}{int} first, \textcolor{keywordtype}{int} mid, \textcolor{keywordtype}{int} last, \textcolor{keywordtype}{int} temp[] )}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00011}00011 \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00012}00012    \textcolor{keywordtype}{int} iA = first, iB = mid, n = last -\/ first;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00013}00013    \textcolor{keywordflow}{for} ( \textcolor{keywordtype}{int} t = 0; t < n; t++ ) temp[t] = ( iB == last ||  ( iA != mid \&\& A[iA] < A[iB] ) ) ? A[iA++] : A[iB++];}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00014}00014    copy\_n( temp, n, A + first );}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00015}00015 \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00016}00016 }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00017}\mbox{\hyperlink{main_8cpp_a212099137a562ed980fa5c92ab4d1eae}{00017}} \textcolor{keywordtype}{void} \mbox{\hyperlink{main_8cpp_a212099137a562ed980fa5c92ab4d1eae}{mergeSort}}( \textcolor{keywordtype}{int} A[], \textcolor{keywordtype}{int} n, \textcolor{keywordtype}{int} start, \textcolor{keywordtype}{int} temp[] )}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00018}00018 \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00019}00019    \textcolor{keywordflow}{if} ( n < 2 || ( n == 2 \&\& A[start] <= A[start+1] ) ) \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00020}00020    \textcolor{keywordtype}{int} nlow = n / 2, nhigh = n -\/ nlow, mid = start + nlow;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00021}00021    \mbox{\hyperlink{main_8cpp_a212099137a562ed980fa5c92ab4d1eae}{mergeSort}}( A, nlow , start, temp );}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00022}00022    \mbox{\hyperlink{main_8cpp_a212099137a562ed980fa5c92ab4d1eae}{mergeSort}}( A, nhigh, mid  , temp );}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00023}00023    \mbox{\hyperlink{main_8cpp_a6002c09b3d85eed3e6952e7dc6f392fa}{merge}}( A, start, mid, start + n, temp );}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00024}00024 \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00025}00025 }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00026}\mbox{\hyperlink{main_8cpp_ac63f254d1a5dc08c0f681b410535b73f}{00026}} \textcolor{keywordtype}{void} \mbox{\hyperlink{main_8cpp_a212099137a562ed980fa5c92ab4d1eae}{mergeSort}}( \textcolor{keywordtype}{int} A[], \textcolor{keywordtype}{int} n )}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00027}00027 \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00028}00028    \textcolor{keywordtype}{int} *temp = \textcolor{keyword}{new} \textcolor{keywordtype}{int}[n];}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00029}00029    \mbox{\hyperlink{main_8cpp_a212099137a562ed980fa5c92ab4d1eae}{mergeSort}}( A, n, 0, temp );}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00030}00030    \textcolor{keyword}{delete} [] temp;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00031}00031 \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00032}00032 }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00033}00033 \textcolor{comment}{//======================================================================}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00034}00034 }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00035}00035 }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00036}\mbox{\hyperlink{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{00036}} \textcolor{keywordtype}{int} \mbox{\hyperlink{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}()}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00037}00037 \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00038}00038 }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00039}00039    \textcolor{keyword}{const} \textcolor{keywordtype}{int} N = 10000000;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00040}00040        \textcolor{comment}{// Make N big enough to be worthwhile}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00041}00041    \textcolor{keyword}{static} \textcolor{keywordtype}{int} A[N];}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00042}00042    srand( time( 0 ) );}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00043}00043    \textcolor{keywordflow}{for} ( \textcolor{keywordtype}{int} \&e : A ) e = 1 + rand() \% 100;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00044}00044 }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00045}00045    \textcolor{comment}{//cout << "{}Original: "{};}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00046}00046    \textcolor{comment}{//for ( int e : A ) cout << e << ' ';}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00047}00047 }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00049}00049    clock\_t t1 = clock();     \textcolor{comment}{// START YOUR CLOCK JUST ABOVE WHAT YOU WANT TO TIME}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00050}00050 }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00051}00051    \mbox{\hyperlink{main_8cpp_a212099137a562ed980fa5c92ab4d1eae}{mergeSort}}( A, N );        \textcolor{comment}{// Whatever you are timing}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00052}00052 }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00053}00053    clock\_t t2 = clock();     \textcolor{comment}{// STOP YOUR CLOCK JUST BELOW WHAT YOU WANT TO TIME}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00055}00055 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00056}00056    \textcolor{comment}{//cout << "{}\(\backslash\)nSorted:   "{};}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00057}00057    \textcolor{comment}{//for ( int e : A ) cout << e << ' ';}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00058}00058 }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00059}00059 }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00060}00060    cout << \textcolor{stringliteral}{"{}\(\backslash\)nSorting "{}} << N << \textcolor{stringliteral}{"{} numbers took "{}} << 1000.0 * ( t2 -\/ t1 ) / CLOCKS\_PER\_SEC << \textcolor{stringliteral}{"{} milliseconds\(\backslash\)n\(\backslash\)n"{}} << endl;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00061}00061 }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00062}00062 \}}
+
+\end{DoxyCode}
